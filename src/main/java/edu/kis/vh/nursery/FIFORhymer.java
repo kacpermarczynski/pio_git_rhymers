@@ -2,16 +2,16 @@ package edu.kis.vh.nursery;
 
 /**
  * Klasa realizuje stos FIFO, dziedziczy ona DefaultCountingOutRhymer
- * Implementuje metode countOut(), ktora usuwa elementy takiej kolejnosci, w jakiej zostaly one dodane
+ * Implementuje metodę countOut(), która usuwa elementy takiej kolejności, w jakiej zostały one dodane
  */
 public class FIFORhymer extends DefaultCountingOutRhymer {
 
-    /** Tymczasowy stos uzywany do realizacji FIFO */
-    public DefaultCountingOutRhymer temp = new DefaultCountingOutRhymer();
+    /** Tymczasowy stos używany do realizacji FIFO */
+    private DefaultCountingOutRhymer temp = new DefaultCountingOutRhymer();
 
     /**
-     * Nadpisana metoda countOut(), ktora usuwa elementy ze stosu w kolejności FIFO
-     * @return usunięty element lub -1, jesli stos byl pusty.
+     * Nadpisana metoda countOut(), która usuwa elementy ze stosu w kolejności FIFO
+     * @return usunięty element lub -1, jeśli stos był pusty.
      */
     @Override
     public int countOut() {
@@ -27,5 +27,10 @@ public class FIFORhymer extends DefaultCountingOutRhymer {
             countIn(temp.countOut());
 
         return ret;
+    }
+
+    // Getter dla zmiennej temp, jeśli jest to wymagane
+    public DefaultCountingOutRhymer getTemp() {
+        return temp;
     }
 }
