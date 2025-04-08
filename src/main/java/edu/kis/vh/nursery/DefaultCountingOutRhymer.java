@@ -1,6 +1,9 @@
 package edu.kis.vh.nursery;
 
 public class DefaultCountingOutRhymer {
+    public int getTotal() {
+        return total;
+    }
 
     private static final int INT = 12;
     private static final int INT1 = -1;
